@@ -1,0 +1,1 @@
+Vladyslav Stashkevych's repository for Information Systems Administration subject.
