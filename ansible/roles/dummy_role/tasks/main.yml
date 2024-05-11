@@ -1,0 +1,17 @@
+# dummy_role/tasks/main.yml
+- name: Update package
+  hosts: isa
+  tasks: 
+    - name: Install package with apt manager
+      become: yes
+      apt:
+        name: "{{ package_name }}"
+        state: present
+      when: ansible_os_family == "Debian"
+      
+    - name: Install package with yum manager
+      become: yes
+      yum:
+        name: "{{ package_name }}"
+        state: present
+      when: ansible_os_family == "RedHat"
