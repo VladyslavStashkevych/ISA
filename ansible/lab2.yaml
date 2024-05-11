@@ -1,0 +1,14 @@
+--- 
+- name: update /etc/hostname
+  hosts: isa 
+  become: yes
+  tasks: 
+    - name: update /etc/hostname
+      lineinfile: 
+        path: /etc/hostname
+        regexp: '^,*$'
+        line: 'vladyslav-stashkevych-lab2' 
+      notify: Restart hostname
+  handlers:
+    - name: Restart hostname
+      ansible.builtin.shell: hostnamectl set-hostname vladyslav-stashkevych-lab2

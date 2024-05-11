@@ -1,0 +1,2 @@
+[isa]
+3.72.74.14 ansible_user=ubuntu ansible_ssh_private_key_file=~/isa/main-pair.pem
